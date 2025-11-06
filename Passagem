@@ -1,0 +1,31 @@
+using System;
+
+class Passagem
+{
+    static void Main()
+    {
+        double[] valores = { 120.00, 200.00, 50.00, 80.00 };
+
+        Console.WriteLine("Códigos de destino:");
+        Console.WriteLine("1 - Morros");
+        Console.WriteLine("2 - Barreirinhas");
+        Console.WriteLine("3 - Bacabeira");
+        Console.WriteLine("4 - Rosário");
+
+        Console.Write("Digite o código do destino: ");
+        int codigo = int.Parse(Console.ReadLine());
+
+        Console.Write("É ida e volta? (S/N): ");
+        string idaVolta = Console.ReadLine().ToUpper();
+
+        double valorPassagem = valores[codigo - 1];
+
+        if (idaVolta == "S")
+        {
+            valorPassagem *= 2;
+            valorPassagem *= 0.9; // 10% de desconto
+        }
+
+        Console.WriteLine($"Valor total da passagem: R$ {valorPassagem:F2}");
+    }
+}
