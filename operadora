@@ -1,0 +1,23 @@
+using System;
+
+class Operadora
+{
+    static void Main()
+    {
+        const double planoBasico = 50.00;
+        const int minutosFranquia = 100;
+        const double valorExcedente = 2.00;
+
+        Console.Write("Digite a quantidade de minutos utilizados: ");
+        int minutos = int.Parse(Console.ReadLine());
+
+        double valorPago = planoBasico;
+
+        if (minutos > minutosFranquia)
+        {
+            valorPago += (minutos - minutosFranquia) * valorExcedente;
+        }
+
+        Console.WriteLine($"Valor a pagar: R$ {valorPago:F2}");
+    }
+}
